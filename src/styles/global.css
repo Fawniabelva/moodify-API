@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+:root{
+  --bg: #F8F4FF;
+  --primary: #6A4FE0;
+  --primary-soft: #EDEBFF;
+  --text: #2C2C2C;
+  --muted: #6b6b83;
+  --card: #FFFFFF;
+  --shadow: 0 8px 20px rgba(90,75,180,0.06);
+  --rounded: 18px;
+  --glass: rgba(255,255,255,0.75);
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* layout */
+.card{
+  background: var(--card);
+  border-radius: var(--rounded);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  margin-bottom: 14px;
+}
+
+/* inputs */
+.input, .textarea {
+  width:100%;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid #EFEFF4;
+  background: #FFF;
+  outline:none;
+  box-shadow: none;
+  font-size:14px;
+  margin-top:6px;
+}
+.textarea{min-height:96px; resize:vertical}
+
+/* buttons */
+.btn{
+  background: linear-gradient(135deg,#7C5CFF 0%, #B59CFF 100%);
+  color:#fff;
+  border:none;
+  padding:12px 16px;
+  border-radius:14px;
+  font-weight:600;
+  cursor:pointer;
+}
+.btn-danger{
+  background: linear-gradient(135deg,#FF7A85 0%, #FFB1B9 100%);
+}
+.btn:active{transform:translateY(1px)}
+
+/* navbar */
+.navbar{
+  position:fixed;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:18px;
+  width:92%;
+  max-width:760px;
+  display:flex;
+  justify-content:space-around;
+  gap:10px;
+  background:var(--glass);
+  box-shadow:0 12px 30px rgba(30,20,80,0.08);
+  padding:10px 18px;
+  border-radius:32px;
+  backdrop-filter: blur(8px);
+  z-index:60;
+}
+.nav-item{
+  font-size:12px;
+  color:#777;
+  text-decoration:none;
+  display:flex;
+  gap:8px;
+  align-items:center;
+  flex-direction:column;
+}
+.nav-item .nav-icon{font-size:18px}
+.nav-item.active{color: var(--primary); font-weight:700}
+
+/* mood picker */
+.emoji-btn{
+  border:1px solid transparent;
+  background:transparent;
+  padding:8px;
+  border-radius:12px;
+  cursor:pointer;
+}
+.emoji-btn.selected{
+  background: linear-gradient(135deg,#F4F0FF 0%, #EDEBFF 100%);
+  border-color: rgba(110,85,230,0.08);
+  box-shadow: 0 8px 20px rgba(106,79,224,0.08);
+}
+
+/* mood card */
+.mood-card{ display:block; text-decoration:none; color:inherit; }
+
+/* responsive padding for content to avoid bottom nav overlap */
+@media (max-width: 768px){
+  body > div { padding-bottom: 140px; }
+}
