@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Background */
+body {
+  @apply bg-softBg text-gray-800;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Glass card premium */
+.glass-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  @apply rounded-2xl p-4 shadow-soft border border-white/30;
+}
+
+/* Soft container */
+.soft-container {
+  @apply max-w-2xl mx-auto px-4 pb-24;
+}
+
+/* Bottom nav */
+.bottom-nav {
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  @apply p-3 rounded-3xl shadow-xl flex justify-around border border-white/40;
+}
+
+/* Active nav item */
+.nav-active {
+  @apply text-purple-600 font-semibold;
+}
