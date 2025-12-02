@@ -36,5 +36,5 @@ body {
 
 /* Active nav item */
 .nav-active {
-  @apply text-deepPurple font-semibold;
+  @apply text-purple-600 font-semibold;
 }

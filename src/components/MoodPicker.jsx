@@ -8,14 +8,21 @@ const EMOJIS = [
   { icon: '😢', score: 1, label: 'Very Sad' }
 ];
 
-export default function MoodPicker({ score, setScore }) {
+export default function MoodPicker({ score, setScore, onMoodSelect }) {
+  const handleMoodClick = (mood) => {
+    setScore(mood.score);
+    if (onMoodSelect) {
+      onMoodSelect(mood.label);
+    }
+  };
+
   return (
     <div className="flex gap-3 overflow-x-auto py-2">
       {EMOJIS.map(e => (
         <button
           key={e.score}
           type="button"
-          onClick={() => setScore(e.score)}
+          onClick={() => handleMoodClick(e)}
           className={`flex-shrink-0 flex flex-col items-center justify-center p-2 rounded-xl ${score === e.score ? 'emoji-btn selected' : ''}`}
           title={e.label}
         >
